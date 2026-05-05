@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:Arial; }
+
+    body { line-height:1.6; transition: background 0.5s ease; }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+      transition: 0.3s ease;
+      z-index: 1000;
+    }
+
+    nav.scrolled {
+      background: #ff8fb1;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .logo { color:#fff; font-size:22px; font-weight:bold; }
+
+    ul { list-style:none; display:flex; gap:20px; }
+
+    ul li a {
+      text-decoration:none;
+      color:white;
+      padding:5px 10px;
+      transition:0.3s;
+      border-radius:5px;
+    }
+
+    ul li a:hover { background:#ffb6c1; color:#000; }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(135deg, #ffc0cb, #ffb6c1, #ffe4ec);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#fff;
+      font-size:32px;
+      text-align:center;
+      padding:20px;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    section { padding:100px 30px; }
+
+    section:nth-child(even) { background: #ffe4ec; }
+    section:nth-child(odd) { background: #fff0f5; }
+
+    h2 { margin-top:20px; }
+
+    a { color:blue; }
+
+    @media(max-width:768px){
+      ul {
+        position:absolute;
+        top:60px;
+        right:0;
+        background:#333;
+        flex-direction:column;
+        width:200px;
+        display:none;
+      }
+
+      ul.active { display:flex; }
+
+      .menu-toggle {
+        display:block;
+        cursor:pointer;
+        color:white;
+        font-size:24px;
+      }
+    }
+
+    @media(min-width:769px){ .menu-toggle{ display:none;} }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="logo">Portfolio</div>
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+  <ul id="menu">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+  </ul>
+</nav>
+
+<header id="home">
+  <div>
+    <h1>KOVVURI SRI SATYA SURYA SUREKHA</h1>
+    <p>Komaripalem, Andhra Pradesh, 533346</p>
+    <p>B.Tech CSE Student | Web Developer</p>
+    
+    <p>
+      <a href="https://www.linkedin.com/in/kovvuri-sri-satya-surya-surekha-a9a6ab330" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/Surekha3636" target="_blank">GitHub</a>
+    </p>
+  </div>
+</header>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <p>C</p>
+  <p>Java</p>
+  <p>Python</p>
+  <p>HTML</p>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <p>Shri Vishnu Engineering College for Women</p>
+  <p>BTech Computer Science and Engineering</p>
+  <p>CGPA: 8.37/10</p>
+  <p>Bhimavaram, Andhra Pradesh</p>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <h3>To Do Alarm</h3>
+  <p>Developed a browser-based to-do alarm application with task scheduling and automatic alerts using JavaScript.</p>
+  <a href="https://surekha3636.github.io/todo-alarm/">Project Link</a>
+</section>
+
+<section id="certifications">
+  <h2>Certifications</h2>
+  <p>Simplilearn – C Programming</p>
+  <p>Great Learning – C Programming</p>
+  <p>Infosys Springboard – Basics of Python</p>
+  <p>IEEE CIS SVECW – Coding Contest</p>
+  <p>Ideathon – Smart Saline Monitoring System</p>
+  <p>Pivot Hackathon Participant</p>
+</section>
+
+
+
+<script>
+  const navbar = document.getElementById("navbar");
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) navbar.classList.add("scrolled");
+    else navbar.classList.remove("scrolled");
+  });
+
+  toggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+  });
+</script>
+
+</body>
+</html>
